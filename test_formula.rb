@@ -6,7 +6,11 @@ class TestFormula < Formula
   license "MIT"
 
   def install
-        bin.install "test_script"
+        git clone "git@github.com:Araram96/test-brewtap.git"
+
+        Dir.chdir("test-brewtap")
+
+        python3 "test_script.py"
   end
 
 end
