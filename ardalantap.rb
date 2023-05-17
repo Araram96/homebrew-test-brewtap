@@ -10,7 +10,7 @@ class Ardalantap < Formula
 
   def install
     
-    bin.install 'test_script.py' -> 'test_script'
+    bin.install 'test_script.py' => 'test_script'
 
   end
 
