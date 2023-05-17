@@ -10,7 +10,7 @@ class Ardalantap < Formula
 
   def install
 
-    libexec.install 'test_script.py' => 'test_script'
+    resource("test_script.py").stage { system "python", *Language::Python.setup_install_args(libexec/"vendor") }
   end
 end 
 
