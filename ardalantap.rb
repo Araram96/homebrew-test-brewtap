@@ -9,8 +9,8 @@ class Ardalantap < Formula
   # depends_on "cmake" => :build
 
   def install
-
-    resource("test_script.py").stage { system "python", *Language::Python.setup_install_args(libexec/"vendor") }
+    
+    bin.install 'test_script.py' => 'ardalantap'
   end
-end 
+end
 
