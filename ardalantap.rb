@@ -6,7 +6,6 @@ class Ardalantap < Formula
   license "MIT"
 
   depends_on "python@3.9"
-  
   def install
     # Install the Python script
     libexec.install "test_script.py"
