@@ -5,7 +5,7 @@ class Ardalantap < Formula
   sha256 "6a86f1e8ffaa66b7ae9c4d9303b30bd34a96c804886252b535eb04d9e333eb8a"
   license "MIT"
 
-  depends_on "python3.10"
+  depends_on "python@3.9"
   def install
     # Install the Python script
     libexec.install "test_script.py"
@@ -16,7 +16,7 @@ class Ardalantap < Formula
     # Create a wrapper script that runs the Python script
     (bin/"ardalantap").write <<~EOS
       #!/bin/bash
-      exec "#{Formula["python3.10"].bin}/python3" "#{libexec}/test_script.py" "$@"
+      exec "#{Formula["python@3.9"].bin}/python3.9" "#{libexec}/test_script.py" "$@"
     EOS
 
     # Make the wrapper script executable
