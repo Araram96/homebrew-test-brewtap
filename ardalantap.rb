@@ -1,4 +1,4 @@
-class Myscript < Formula
+class Ardalantap < Formula
   desc "Test3"
   homepage "https://github.com/Araram96/test-brewtap"
   url "https://github.com/Araram96/test-brewtap/archive/refs/tags/v0.2.4.tar.gz"
@@ -15,13 +15,13 @@ class Myscript < Formula
     chmod "+x", libexec/"test_script.py"
 
     # Create a wrapper script that runs the Python script
-    (bin/"myscript").write <<~EOS
+    (bin/"ardalantap").write <<~EOS
       #!/bin/bash
       exec "#{Formula["python@3.9"].opt_bin}/python3" "#{libexec}/test_script.py" "$@"
     EOS
 
     # Make the wrapper script executable
-    chmod "+x", bin/"myscript"
+    chmod "+x", bin/"ardalantap"
   end
 
   def caveats
@@ -29,12 +29,12 @@ class Myscript < Formula
       The Python script is installed in the following location:
         #{opt_libexec}/test_script.py
 
-      You can run it using the "myscript" command.
+      You can run it using the "ardalantap" command.
     EOS
   end
 
   test do
     # Add test code here to verify the installation
-    system "#{bin}/myscript", "--version"
+    system "#{bin}/ardalantap", "--version"
   end
 end
